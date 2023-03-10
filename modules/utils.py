@@ -20,6 +20,6 @@ def abi_to_selectors(info):
 
 def fetch_abi_info(address):
     info = scanapi.read_abi_from_address(address)
-    if len(info) == 0:
+    if not info or  len(info) == 0:
         return {} 
     return abi_to_selectors(info)
